@@ -1,4 +1,4 @@
-require 'mopidy/response'
+require_relative 'response'
 
 module Mopidy
   class Http

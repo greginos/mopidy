@@ -29,9 +29,14 @@ module Mopidy
     end
 
     def self.add(track)
-      json = Mopidy.format_json(1, 'core.tracklist.add', 'uris': [track[:uri]])
+      json = Mopidy.format_json(1, 'core.tracklist.add', 'uris': [track['uri']])
       Mopidy.post(json)
     end
+
+	  def self.add_uri(uri)
+		  json = Mopidy.format_json(1, 'core.tracklist.add', 'uris': [uri])
+		  Mopidy.post(json)
+	  end
 
     def self.length
       json = Mopidy.format_json(1, 'core.tracklist.get_length')
