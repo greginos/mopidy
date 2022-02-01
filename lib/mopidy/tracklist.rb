@@ -17,7 +17,7 @@ module Mopidy
       Mopidy.post(json)
     end
 
-    def self.shuffle(start_index, end_index)
+    def self.shuffle(start_index = nil, end_index = nil)
       params = { 'start': start_index, 'end': end_index }
       json = Mopidy.format_json(1, 'core.tracklist.shuffle', params)
       Mopidy.post(json)
